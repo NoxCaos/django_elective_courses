@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+    <h1>Here is the list of trains</h1>
+    <hr>
+    <table class="table">
+        <tr>
+            <td><h3>Train</h3></td>
+            <td><h3>From</h3></td>
+            <td><h3>To</h3></td>
+            <td><h3>Price</h3></td>
+            <td><h3></h3></td>
+        </tr>
+        {% for i in trains %}
+        <tr>
+            <td>{{ i.name }}</td>
+            <td>{{ i.cityFrom }}</td>
+            <td>{{ i.cityTo }}</td>
+            <td>{{ i.cost }}₴</td>
+            <td><a class="button" href="/add_invoice/?train={{ i.name }}">BUY</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}

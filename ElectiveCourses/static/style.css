@@ -1,0 +1,266 @@
+html {
+
+}
+
+body {
+    background-color: #eee;
+    color: #555;
+    font-family: "Lucida Grande", Verdana, Arial, sans-serif;
+}
+
+textarea:focus, input:focus{
+    outline: 0;
+}
+
+.table {
+    /* Remove spacing between table cells (from Normalize.css) */
+    border-collapse: collapse;
+    border-spacing: 0;
+    empty-cells: show;
+    border: 0px solid #cbcbcb;
+    width: 100%;
+    font-size: 20px;
+}
+
+h1 {
+    color: #3FA9C1;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+label {
+    font-size: 20px;
+    display: block;
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.header-image {
+    display: block;
+    margin: auto;
+    height: auto;
+    width: 240px;
+    margin-top: 50px;
+}
+
+.centered {
+    margin: auto;
+    margin-top: 10px;
+    width: 800px;
+    height: auto;
+}
+
+.centered ul.errorlist {
+    display: block;
+    margin: auto;
+    height: auto;
+    color: #f24643;
+    list-style: none;
+}
+
+.centered img {
+    display: block;
+    margin: auto;
+    width: 60%;
+}
+
+.centered span {
+    font-size: 18px;
+    display: block;
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.centered span.helptext {
+    font-size: 15px;
+    display: block;
+    margin-top: 5px;
+    width: 100%;
+    text-align: center;
+}
+
+.centered input[type="text"], .centered input[type="password"] {
+    margin: auto;
+    margin-top: 5px;
+    display: block;
+    color: #555;
+    height: 30px;
+    width: 60%;
+    left: 20%;
+    font-size: 20px;
+    padding: 7px;
+    border-width: 2px;
+    border-style: solid;
+    font-family: sans-serif;
+    border-radius: 5px;
+    border-color: #3FA9C1;
+}
+
+.centered input[type="date"] {
+    margin-top: 5px;
+    color: #555;
+    height: 30px;
+    width: 200px;
+    font-size: 20px;
+    padding: 4px;
+    border-width: 2px;
+    border-style: solid;
+    font-family: sans-serif;
+    border-radius: 5px;
+    border-color: #3FA9C1;
+    text-align: center;
+}
+
+.centered input[type="number"] {
+    display: block;
+    margin: auto;
+    margin-top: 5px;
+    color: #555;
+    height: 30px;
+    width: 40px;
+    font-size: 20px;
+    padding: 4px;
+    border-width: 2px;
+    border-style: solid;
+    font-family: sans-serif;
+    border-radius: 5px;
+    border-color: #3FA9C1;
+    text-align: center;
+}
+
+.centered input[type="checkbox"] {
+    display: block;
+    margin: auto;
+    margin-top: 5px;
+    color: #555;
+    height: 20px;
+    width: 20px;
+    font-size: 20px;
+    padding: 4px;
+    border-width: 2px;
+    border-style: solid;
+    font-family: sans-serif;
+    border-radius: 5px;
+    border-color: #3FA9C1;
+    text-align: center;
+}
+
+.centered textarea {
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    color: #555;
+    height: 150px;
+    width: 100%;
+    font-size: 20px;
+    padding: 4px;
+    border-width: 2px;
+    border-style: solid;
+    font-family: sans-serif;
+    border-radius: 5px;
+    border-color: #3FA9C1;
+}
+
+.centered a {
+    color: #3FA9C1;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+}
+
+.centered a.high {
+    font-size: 20px;
+}
+
+.centered a:hover {
+    color: #0087A4;
+}
+
+.centered .button {
+    display: block;
+    width: 40%;
+    margin: auto;
+    margin-top: 20px;
+    font-size: 20px;
+    color: #555;
+    padding: 8px;
+    background-color: transparent;
+    border-width: 3px;
+    border-color: #555;
+    border-style: solid;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.centered .button-red {
+    display: block;
+    width: 40%;
+    margin: auto;
+    margin-top: 20px;
+    font-size: 20px;
+    color: #555;
+    padding: 8px;
+    background-color: transparent;
+    border-width: 3px;
+    border-color: #f2443f;
+    border-style: solid;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.centered td .button {
+    margin-top: 2px;
+    font-size: 18px;
+    color: #555;
+    padding: 5px;
+    width: 100%;
+}
+
+.centered td a {
+    display: inline-block;
+    text-align: left;
+}
+
+.centered td .button-red {
+    margin-top: 2px;
+    font-size: 18px;
+    color: #555;
+    padding: 5px;
+    width: 100%;
+}
+
+.centered .button:hover, .centered .button-red:hover {
+    background-color: #a2e0ff;
+    border-color: #3FA9C1;
+    cursor: pointer;
+    color: #555;
+}
+
+.centered .error-message {
+    font-style: normal;
+    font-size: 25px;
+    color: #f2443f;
+    display: block;
+    text-align: center;
+}
+
+tr {
+    height: 50px;
+}
+
+tr.paid {
+    background-color: #d1ff95;
+}
+
+tr.pending {
+    background-color: #ffaeae;
+}
+
+tr.overdue {
+    background-color: #888;
+}

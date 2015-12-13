@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+    <h1>Welcome to StudyMore!</h1>
+    <h2>Select a course you would like to join below</h2>
+    <hr>
+    <table class="table">
+        <tr>
+            <td><h3>Name</h3></td>
+            <td><h3>Subject</h3></td>
+            <td><h3>Teacher</h3></td>
+            <td><h3>Length</h3></td>
+            {% if user_type and user_type == 2 %}
+                <td></td>
+            {% endif %}
+        </tr>
+        {% for i in courses %}
+        <tr>
+            <td>{{ i.name }}</td>
+            <td>{{ i.subject }}</td>
+            <td>{{ i.teacher.name }}</td>
+            <td>{{ i.length }} months</td>
+            {% if user_type and user_type == 2 %}
+                <td><a class="button" href="/add_student_to_course/?course={{ i.id }}">Select</a></td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}

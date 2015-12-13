@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    {% load staticfiles %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+    <title>StudyMore</title>
+</head>
+<body>
+    <a href="/"><img class="header-image" src="{% static 'images/logo-small.png' %}"/></a><br>
+    <div class="centered">
+    {% if user.is_authenticated %}
+        <h2>Hello, {{ user }}</h2><br>
+        <a class="high" href="/profile/">My profile</a>
+        <a class="high" href="/logout/">Logout</a>
+    {% else %}
+        <a class="high" href="/login/">Sign in</a>
+        <a class="high" href="/register/">Register</a>
+    {% endif %}
+        {% block content %}
+        {% endblock %}
+        <br><br>
+        <hr>
+        <span>StudyMore inc. (c) 2015</span><br>
+        <a class="high" href="/">To main page</a><br>
+    </div>
+</body>
+</html>

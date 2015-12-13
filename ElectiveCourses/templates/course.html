@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+    <h1>Course "{{ course.name }}"</h1>
+    <span>On subject: {{ course.subject }}</span>
+    <span>By: {{ course.teacher.name }} {{ course.teacher.surname }}</span>
+
+    {% if feedbacks %}<hr>
+    <h2>Students' marks on this course</h2>
+    <table class="table">
+        <tr>
+            <td><h3>Name</h3></td>
+            <td><h3>Surname</h3></td>
+            <td><h3>Mark</h3></td>
+            <td><h3>Comment</h3></td>
+        </tr>
+
+        {% for i in feedbacks %}
+        <tr>
+            <td>{{ i.student.name }}</td>
+            <td>{{ i.student.surname }}</td>
+            <td>{{ i.mark }}</td>
+            <td>{{ i.comment }}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+    {% else %}
+        <span>No marks yet</span>
+    {% endif %}
+    <br>
+
+    <hr>
+    <h2>All students on this course</h2>
+    <span>
+        {% for i in students %}
+        {{ i.name }} {{ i.surname }} |
+        {% endfor %}
+    </span>
+
+{% endblock %}

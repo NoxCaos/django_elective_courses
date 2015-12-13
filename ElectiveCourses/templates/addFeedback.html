@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<hr>
+<h2>Add your feedback to {{ student.name }} {{ student.surname }} for completing "{{ course.name }}"</h2>
+
+<form action="/mark_student_action/" method="post">
+    {% csrf_token %}
+    <span>Mark:</span>
+    <input name="mark" type="number" value="5"/>
+    <span>Comment (optional):</span>
+    <textarea name="message" placeholder="Leave a comment" cols="120" rows="5" class="form-control"></textarea>
+    <input name="student_id" type="hidden" value="{{ student.id }}"/>
+    <input name="course_id" type="hidden" value="{{ course.id }}"/>
+    <input class="button" type="submit" value="Mark {{ student.name }}">
+</form>
+
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+    <h1>Hello, {{ user }}</h1>
+    <h2>Your status is Teacher</h2>
+    <hr>
+    {% if course %}
+    <a class="high" href="/course/?course_id={{ course.id }}">Your course is called "{{ course.name }}"</a>
+    <span>Your course subject is "{{ course.subject }}"</span>
+        {% if students %}
+            <h2>Here is the list of students on your course:</h2>
+             <table class="table">
+                <tr>
+                    <td><h3>Name</h3></td>
+                    <td><h3>Surname</h3></td>
+                    <td><h3>Course</h3></td>
+                    <td></td>
+                </tr>
+                {% for i in students %}
+                <tr>
+                    <td>{{ i.name }}</td>
+                    <td>{{ i.surname }}</td>
+                    <td>{{ course.name }}</td>
+                    <td><a class="button" href="/mark_student/?student={{ i.id }}&course={{ course.id }}">Mark</a></td>
+                </tr>
+                {% endfor %}
+            </table>
+        {% endif %}
+    <a class="button-red" href="#">Remove course</a>
+    {% else %}
+    <h2>You have no any courses yet</h2>
+    <form action="/create_course/" method="post">
+        {% csrf_token %}
+        <span>Enter a valid course name</span>
+        <input name="name" placeholder="Course name" type="text"/>
+        <span>Course can be only on one subject</span>
+        <input name="subject" placeholder="Course subject" type="text"/>
+        <span>Choose how many months will this course be</span>
+        <input name="length" value="3" type="number"/>
+        <input class="button" type="submit" value="Create a course!"/>
+    </form>
+
+    {% endif %}
+
+{% endblock %}
