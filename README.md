@@ -11,3 +11,5 @@ Demonstrates a system where teacher creates a courses wich can be attended by st
 6. Run <pre>python manage.py createsuperuser --username [username] --email [anyemail]</pre>
 7. The type password twice. This will be your superuser. You will be able to access /admin/ with it
 8. Run the project. If you did everything ok, you will get the webpage like this
+
+![alt tag](https://raw.github.com/NoxCaos/django_elective_courses/master/screenshot.png)
